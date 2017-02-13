@@ -46,7 +46,11 @@ public class Producer<T> {
 		return this.queue.isEmpty();
 	}
 
-	public synchronized void submit(T item){
+	/**
+	 * Submits a new item to be consumed. This method blocks if the queue is full.
+	 * @param item
+	 */
+	public void submit(T item){
 		try {
 			this.queue.put(item);
 		} catch (InterruptedException e) {			
