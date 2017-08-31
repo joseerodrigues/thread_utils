@@ -1,7 +1,7 @@
 # thread_utils
 Helpers for Multi-threading development
 
-- #####Producer/Consumer
+- Producer/Consumer
 ````java
 Producer<String> producer = Producer.create(String.class, new Consumer<String>() {
     public void consume(String item) {
@@ -16,9 +16,9 @@ for (int i = 0; i < 10; i++){
 producer.stop();
 ````
 
-- #####ParallelRunner
+- ParallelRunner
 
-Builds on Producer/Consumer to provide an easy way to run multiple tasks in parallel. 
+>Builds on Producer/Consumer to provide an easy way to run multiple tasks in parallel. 
 When all tasks complete, a callback is called.
 
 ````java
