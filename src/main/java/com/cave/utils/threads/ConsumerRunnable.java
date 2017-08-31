@@ -2,7 +2,7 @@ package com.cave.utils.threads;
 
 import java.util.concurrent.LinkedBlockingQueue;
 
-class ConsumerRunnable<T> implements Runnable {
+class ConsumerRunnable<T> implements Runnable, ConsumerMXBean {
 
     private LinkedBlockingQueue<Object> queue = null;
     private Object poison = null;
@@ -43,4 +43,8 @@ class ConsumerRunnable<T> implements Runnable {
         }
     }
 
+    @Override
+    public long getCurrentQueueSize() {
+        return this.queue.size();
+    }
 }
