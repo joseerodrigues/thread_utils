@@ -23,7 +23,6 @@ When all tasks complete, a callback is called.
 
 ````java
 private static class SampleRunnable implements Runnable{
-
     private int id = 0;
 
     public SampleRunnable(int id) {
