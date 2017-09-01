@@ -12,6 +12,11 @@ class ParallelRunnerBuilder {
         return this;
     }
 
+    public ParallelRunnerBuilder queueSize(int queueSize){
+        config.setQueueSize(queueSize);
+        return this;
+    }
+
     public ParallelRunner build(){
         return new ParallelRunner(config);
     }

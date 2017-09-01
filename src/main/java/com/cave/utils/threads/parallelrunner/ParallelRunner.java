@@ -17,7 +17,8 @@ public class ParallelRunner {
     }
 
     public void start(){
-        this.producer = Producer.create(Runnable.class, new RunnableConsumer(), this.config.getNumberOfThreads());
+        this.producer = Producer.create(Runnable.class, new RunnableConsumer(),
+                this.config.getNumberOfThreads(), this.config.getQueueSize());
     }
 
     public void stop(){
