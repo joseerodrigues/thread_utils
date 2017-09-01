@@ -17,7 +17,7 @@ public class ParallelRunnerExample {
     }
 
     public static void main(String[] args) {
-        ParallelRunner runner = ParallelRunner.builder().withThreads(3).build();
+        ParallelRunner runner = ParallelRunner.builder().withThreads(3).queueSize(20).build();
 
         System.out.println("starting...");
         runner.start();

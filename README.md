@@ -40,7 +40,7 @@ private static class SampleRunnable implements Runnable{
 ParallelRunner runner = ParallelRunner.builder().withThreads(3).build();
 runner.start();
 
-// async, method returns as soon as all tasks are submited to execution, 
+// async, method returns as soon as all tasks are submitted to execution, 
 // but have not necessarily completed.
 runner.run(new Runnable() {
                        @Override

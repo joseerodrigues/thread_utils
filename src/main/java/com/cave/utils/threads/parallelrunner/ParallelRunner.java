@@ -48,6 +48,10 @@ public class ParallelRunner {
      * @param actions
      */
     public void run(Runnable onComplete, Runnable ... actions){
+        if (onComplete == null){
+            throw new NullPointerException("onComplete");
+        }
+
         CountDownLatch latch = submitAndLatch(actions);
         this.producer.submit(new OnCompleteRunnable(latch, onComplete));
     }

@@ -6,6 +6,10 @@ class RunnableConsumer implements Consumer<Runnable> {
 
     @Override
     public void consume(Runnable item) {
-        item.run();
+        try{
+            item.run();
+        }catch (Throwable t){
+            t.printStackTrace(System.err);
+        }
     }
 }

@@ -14,8 +14,10 @@ class LatchRunnable implements Runnable {
 
     @Override
     public void run() {
-        try{
+        try {
             runnable.run();
+        }catch (Throwable t){
+            t.printStackTrace(System.err);
         }finally {
             latch.countDown();
         }

@@ -17,9 +17,13 @@ class OnCompleteRunnable implements Runnable{
         try {
             latch.await();
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            e.printStackTrace(System.err);
         }finally {
-            onComplete.run();
+            try{
+                onComplete.run();
+            }catch(Throwable t){
+                t.printStackTrace(System.err);
+            }
         }
     }
 }
